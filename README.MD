@@ -14,19 +14,19 @@ host=localhost
 database=databaseName
 ```
 
-Il faut donc modifier les champs suivants par les vôtres.
-`username` par le nom de l'utilisateur phpmyadmin qui peut accéder à la base de données  
-`password` par le mot de passe de l'utilisateur défini ci-dessus
-`database` le nom de la base de données phpmyadmin qui contient les données relatives à deefy (voir fichier deefy_db.sql)
+Il faut donc modifier les champs suivants par les vôtres.  
+`username` par le nom de l'utilisateur phpmyadmin qui peut accéder à la base de données    
+`password` par le mot de passe de l'utilisateur défini ci-dessus  
+`database` le nom de la base de données phpmyadmin qui contient les données relatives à deefy (voir fichier deefy_db.sql)  
 
 ### Librairies utilisées :
 
-[Codeguy/Upload_v1_3](https://packagist.org/packages/codeguy/upload) pour l'upload de pistes sur le serveur.
+[Codeguy/Upload_v1_3](https://packagist.org/packages/codeguy/upload) pour l'upload de pistes sur le serveur.  
 [Composer](https://getcomposer.org/) pour l'autoloader et namespaces.
 
 ### Rendu :
 
-Tout le projet phpstorm avec la configuration de l'autoloader (composer.json)
+Tout le projet phpstorm avec la configuration de l'autoloader (composer.json)  
 
 ```
 {
