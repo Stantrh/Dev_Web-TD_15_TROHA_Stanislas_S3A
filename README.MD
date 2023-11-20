@@ -7,21 +7,35 @@
 Le fichier contenu dans /config/.ini contient les informations relatives à la connexion à la base de données. Il ressemble à :
 
 ```
+
 driver=mysql
+
 username=user
+
 password=passwd
+
 host=localhost
+
 database=databaseName
+
 ```
 
 Il faut donc modifier les champs suivants par les vôtres.
-`username` par le nom de l'utilisateur phpmyadmin qui peut accéder à la base de données  
+
+`username` par le nom de l'utilisateur phpmyadmin qui peut accéder à la base de données
+
 `password` par le mot de passe de l'utilisateur défini ci-dessus
+
 `database` le nom de la base de données phpmyadmin qui contient les données relatives à deefy (voir fichier deefy_db.sql)
+
+### Ressources :
+
+Les pistes audio que l'on peut publier sur le serveur lors de la création d'une playlist et l'insertion de pistes ne doivent pas exéceder 10 Mo en taille, et possèdent un identifiant unique permettant d'éviter les conflits avec des noms de fichiers indentiques. [Uniqid](https://www.php.net/manual/en/function.uniqid.php)
 
 ### Librairies utilisées :
 
 [Codeguy/Upload_v1_3](https://packagist.org/packages/codeguy/upload) pour l'upload de pistes sur le serveur.
+
 [Composer](https://getcomposer.org/) pour l'autoloader et namespaces.
 
 ### Rendu :
@@ -29,19 +43,35 @@ Il faut donc modifier les champs suivants par les vôtres.
 Tout le projet phpstorm avec la configuration de l'autoloader (composer.json)
 
 ```
+
 {
-  "name": "td_15/Rendu_Final",
-  "description": "Projet fini",
-  "type": "project",
-  "autoload": {
-    "psr-4": {
-      "iutnc\\deefy\\": "./src/classes"
-  }
-  },
-  "require": {
-    "codeguy/upload": "^1.3",
-    "ext-pdo": "*",
-    "ext-json": "*"
-  }
+
+"name": "td_15/Rendu_Final",
+
+"description": "Projet fini",
+
+"type": "project",
+
+"autoload": {
+
+"psr-4": {
+
+"iutnc\\deefy\\": "./src/classes"
+
 }
+
+},
+
+"require": {
+
+"codeguy/upload": "^1.3",
+
+"ext-pdo": "*",
+
+"ext-json": "*"
+
+}
+
+}
+
 ```

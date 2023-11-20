@@ -41,11 +41,19 @@ class AddPodcastTrackAction extends Action
                 // Vérifier si le fichier a bien été uploadé et qu'il est valide
                 if(isset($_FILES['fichier']) && substr($_FILES['fichier']['name'],-4) === '.mp3' && $_FILES['fichier']['type'] === 'audio/mpeg') {
 
+
+                    //uniqid() pour eviter les conflit de fichier avec le meme nom
+                    $idUnique=uniqid();
+                    $audio = '../audio/' . $idUnique .$_FILES['fichier']['name'];
+                    $_FILES['fichier']['name'] = $audio;
+
                     // ici on s'occupe de stocker le fichier
                     require __DIR__ .'/../../traitement_audio.php';
 
+
+
                     // On crée notre objet PodcastTrack
-                    $podcast = new PodcastTrack($_POST['titre'], "../audio/" . $_FILES['fichier']['name']);
+                    $podcast = new PodcastTrack($_POST['titre'], $_FILES['fichier']['name']);
                     if (isset($_POST['nom_artiste'])) {
                         $podcast->__set('artiste', $_POST['nom_artiste']);
                     }
